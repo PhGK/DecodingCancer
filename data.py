@@ -47,25 +47,14 @@ def combine_data(setting, current_test_split, splits):
         full_data['Cancer_C0'] = (random_numbers<0.5) * 1.0
         full_data['Cancer_C1'] = (random_numbers>=0.5) * 1.0
 
-
-
-        
-
         survival_data= pd.DataFrame({'duration': full_data.iloc[:,0]})
-
-
-        #survival_data=survival_data.sort_index(ascending=True)
-
         survival_data['event'] = ((tc.rand_like(tc.tensor(survival_data['duration']))>0.2)*1.0).numpy()
-
         survival_data = survival_data.rename(columns = {setting['duration_name']: 'duration', setting['event_name']: 'event'})
         
         #######################
 
         cancer_type = pd.DataFrame(full_data[[str(col) for col in full_data.columns if str(col).startswith('Cancer_')]].idxmax(axis=1),
                       columns = ['cancer_type'], index = full_data.index)
-
-
 
     data_collection = Data_Collection(full_data, survival_data, cancer_type, current_test_split=current_test_split, splits=splits)
 
