@@ -40,7 +40,7 @@ class LRP_Linear(nn.Module):
         with tc.no_grad():
             Y = self.forward(A).data
 
-        sp = ((Y > 0).float() * R / (zpp + zmm + self.eps * ((zpp + zmm == 0).float() + tc.sign(zpp + zmm)))).data # new version
+        sp = ((Y > 0).float() * R / (zpp + zmm + self.eps * ((zpp + zmm == 0).float() + tc.sign(zpp + zmm)))).data
         sm = ((Y < 0).float() * R / (zmp + zpm + self.eps * ((zmp + zpm == 0).float() + tc.sign(zmp + zpm)))).data
 
         (zpp * sp).sum().backward()
