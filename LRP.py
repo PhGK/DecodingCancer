@@ -10,10 +10,10 @@ from NN import Simple_Model
 
 def reverse_feature_expansion(frame):
 
-    rev_features = frame[frame['therapy_diagnostics'].str.endswith('_rev')] #'_rev'
+    rev_features = frame[frame['therapy_diagnostics'].str.endswith('_rev')] 
     rev_features['therapy_diagnostics_antero'] = rev_features['therapy_diagnostics'].str.split('_rev').str[0].copy()
     rev_features = rev_features.rename(columns = {'LRP': 'LRP_rev', 'input_score':'input_score_rev'})
-    antero_features = frame[~frame['therapy_diagnostics'].str.endswith('_rev')] #'_rev'
+    antero_features = frame[~frame['therapy_diagnostics'].str.endswith('_rev')] 
     antero_features = antero_features.rename(columns = {'LRP': 'LRP_antero', 'therapy_diagnostics': 'therapy_diagnostics_antero', 'input_score':'input_score_antero'})
 
     frame_unexpanded = antero_features.merge(rev_features[['therapy_diagnostics_antero', 'LRP_rev', 'sample_name', 'input_score_rev']], 
@@ -51,7 +51,6 @@ def calculate_LRP_simple(model, data_collection, setting, PATH = './results/LRP/
     input_relevance = model.relprop(R).cpu().detach().numpy()
     print(R.shape)
     LRP_scores_long = np2pd(input_relevance, sample_names, data_collection.f_feature_names)
-    print(LRP_scores_long)
     input_long = data_collection.get_input_long()
 
     LRP_scores_long_and_inputs = LRP_scores_long.merge(input_long, on = ['sample_name', 'therapy_diagnostics'], how = 'left')
