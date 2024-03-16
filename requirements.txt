@@ -1,0 +1,6 @@
+numpy==1.19.1
+pandas==1.1.5
+sklearn==0.0
+torch==1.10.2
+torchtuples==0.2.2
+pycox==0.2.3
