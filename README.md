@@ -18,7 +18,7 @@ The *crossvalidate* function will split data into five folds and start
 - A single entity cancer training
 - LRP computation based on the trained model from the pan cancer training
 
-A new folder is generated containing all results.
+Two new folders (*results* and *LRP*) are generated and contain the training and LRP results, respectively.
 
 
 
