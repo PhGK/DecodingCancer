@@ -7,7 +7,6 @@ import os
 import pandas as pd
 from LRP import calculate_LRP_simple
 from crossant import crossvalidate
-#from grid_search import grid_search
 
 
 def main():
