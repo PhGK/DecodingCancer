@@ -32,7 +32,6 @@ def train_test(model, data_collection, setting, fold, PATH = './results/training
     patdata_test_val, surv_test_val =  data_collection.get_test_set()
 
 
-    #split testval into test and val... test is the first part!!
     tv_length = patdata_test_val.shape[0]
 
     patdata_test, surv_test = patdata_test_val[:tv_length//2,:], surv_test_val[:tv_length//2,:]
