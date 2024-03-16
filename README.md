@@ -23,3 +23,10 @@ A new folder is generated containing all results.
 
 
 
+To change settings with respect to model architecture or training regimen, see settings_tt.py. By default, code is run on the gpu, this can be changed using the device variable in settings.
+
+
+
+
+
+
