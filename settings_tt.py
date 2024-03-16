@@ -13,17 +13,17 @@ if place == 'M':
  
             #training params
 
-            'hidden_depth_simple': 0,   # this is the depth for the first two models (before product) as well as the model after product
+            'hidden_depth_simple': 0,   
 
-            'factor_hidden_nodes': 100, # determines the width of first hidden layers -> width = factor_hidden_nodes * input_width
+            'factor_hidden_nodes': 10, # determines the width ofhidden layers -> width = factor_hidden_nodes * input_width
   
             'training_device': 'cuda:0',
 
-            'training_batch_size': 64,
-            'reduce_lr_epochs': [2],
-            'lr': 1e-3,
-            'dropout': 0.05,
-            'input_dropout': 0.0,
+            'training_batch_size': 1024,
+            'reduce_lr_epochs': [50,50,50],
+            'lr': 1e-4,
+            'dropout': 0.5,
+            'input_dropout': 0.5,
             'weight_decay': 0,
 
             #LRP params
