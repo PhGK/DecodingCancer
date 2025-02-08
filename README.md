@@ -1,5 +1,5 @@
 # 
-Code base for [**Decoding pan-cancer treatment outcomes using multimodal real-world data and explainable AI**](https://www.medrxiv.org/content/10.1101/2023.10.12.23296873v2)
+Code base for [**Decoding pan-cancer treatment outcomes using multimodal real-world data and explainable AI**](https://www.nature.com/articles/s43018-024-00891-1)
 
 Install requirements can be found in requirements.txt.
 
