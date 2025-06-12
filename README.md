@@ -3,6 +3,8 @@ Code base for [**Decoding pan-cancer treatment outcomes using multimodal real-wo
 
 Install requirements can be found in requirements.txt.
 
+---
+
 To start the the analysis, run the Main file
 
 
@@ -27,6 +29,9 @@ To change settings with respect to model architecture or training regimen, see s
 
 
 
+---
+
+We are always looking for passionate people to join our research team. If you're interested in the analysis of  molecular, clinical, or imaging data to support multimodal treatment guidance in cancer, contact us at our sites in Munich, Berlin, or Essen.
 
 
 
